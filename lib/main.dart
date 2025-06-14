@@ -49,21 +49,21 @@ void main() {
 //   }
 
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+// class Home extends StatelessWidget {
+//   const Home({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-      color: Colors.blueAccent,
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-      padding: const EdgeInsets.all(20),
-      child: Text(
-        "Hello Flutter",
-        style: TextStyle(fontSize: 30, letterSpacing: 3),
-        ),
-      ),  
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Container(
+//       color: Colors.blueAccent,
+//       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+//       padding: const EdgeInsets.all(20),
+//       child: Text(
+//         "Hello Flutter",
+//         style: TextStyle(fontSize: 30, letterSpacing: 3),
+//         ),
+//       ),  
+//     );
+//   }
+// }
