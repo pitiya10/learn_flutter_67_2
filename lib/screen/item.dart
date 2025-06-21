@@ -40,7 +40,7 @@ class _ItemState extends State<Item> {
                     // Step 12: Use google fonts
 style: GoogleFonts.kanit(
                       fontSize: 24,
-                      color: Color(0xFFFFFFFF),
+                      color: Color.fromARGB(255, 6, 6, 6),
                     ),
                   ),
                   Text(
@@ -54,7 +54,7 @@ style: GoogleFonts.kanit(
                     personList[index].age.toString(),
                     style: GoogleFonts.kanit(
                       fontSize: 18,
-                      color:  Color.fromARGB(255, 249, 249, 249),
+                      color:  Color.fromARGB(255, 12, 12, 12),
                     ),
                   ),
                   Image.asset(

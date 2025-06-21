@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter_67_2/screen/addForm.dart';
 import 'package:learn_flutter_67_2/screen/item.dart';
  // Step 4 : sperate the Home widjet into its own file
 import 'screen/home.dart';
@@ -23,37 +24,37 @@ void main() {
   //);
 
   //Step 2: Stateless widget
-  runApp(
-    MaterialApp(
-      title: "My Title",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("My App"),
-          backgroundColor: const Color.fromARGB(255, 243, 33, 33),
-          centerTitle: true,
-        ),
-        //body: Home(),
-        //Step 8 : stateful widget
-      body : Item(),
-      ),
-    ),
-  );
-}
+//   runApp(
+//     MaterialApp(
+//       title: "My Title",
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text("My App"),
+//           backgroundColor: const Color.fromARGB(255, 243, 33, 33),
+//           centerTitle: true,
+//         ),
+//         //body: Home(),
+//         //Step 8 : stateful widget
+//       body : Item(),
+//       ),
+//     ),
+//   );
+// }
 
 
-// Step 2: Stateless widget
+// // Step 2: Stateless widget
 
-// class Home extends StatelessWidget {
-//   const Home({super.key});
+// // class Home extends StatelessWidget {
+// //   const Home({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Text("Hello Flutter");
-//   }
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Text("Hello Flutter");
+// //   }
 
 
-// class Home extends StatelessWidget {
-//   const Home({super.key});
+// // class Home extends StatelessWidget {
+// //   const Home({super.key});
 
 //   @override
 //   Widget build(BuildContext context) {
@@ -69,4 +70,8 @@ void main() {
 //       ),  
 //     );
 //   }
-// }
+//Step 13: TextFormField for input
+//Step 14: DropdownButton for job selection
+ 
+runApp(const AddForm());
+}
