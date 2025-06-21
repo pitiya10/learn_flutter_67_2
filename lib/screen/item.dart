@@ -1,5 +1,5 @@
-// step8: stateful widget
 import 'package:flutter/material.dart';
+import 'package:learn_flutter_67_2/models/person.dart';
 
 class Item extends StatefulWidget {
   const Item({super.key});
@@ -8,75 +8,71 @@ class Item extends StatefulWidget {
   State<Item> createState() => _ItemState();
 }
 
+//step 12 : use google font
+import 'package:google_fonts/google_fonts.dart'; 
+
 class _ItemState extends State<Item> {
-  int quantity = 10;
-
-// void addQuantity() {
-//     setState(() {
-//       quantity++;
-//     });
-//   }
-
-// void subtractQuantity() {
-//     setState(() {
-//       if (quantity > 0) {
-//         quantity--;
-//       }
-//     });
-//   }
-
-// step 9: Listview widget
-List data = ["สมชาย", "สมหญิง", "สมศรี", "สมปอง", "สมจิตร", "สมบัติ", "สมคิด", "สมหวัง"];
-
   @override
   Widget build(BuildContext context) {
-    // return Center(
-    //   child: Column(
-    //     mainAxisAlignment: MainAxisAlignment.center,
-    //      children: [
-    //       Text(
-    //         "Quantity: $quantity",
-    //         style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-    //       ),
-    //       const SizedBox(height: 20),
-    //       Row(
-    //         mainAxisAlignment: MainAxisAlignment.center,
-    //         children: [
-    //           ElevatedButton(
-    //             onPressed: addQuantity,
-    //             child: const Text("Add"),
-    //           ),
-    //           const SizedBox(width: 20),
-    //           ElevatedButton(
-    //             onPressed: subtractQuantity,
-    //             child: const Text("Subtract"),
-    //           ),
-    //         ],
-    //       ),
-    //      ],
-    //   ),
-    // );
     return ListView.builder(
+      itemCount: personList.length,
       itemBuilder: (context, index) {
         return Container(
           decoration: BoxDecoration(
             color: Colors.blue,
             borderRadius: BorderRadius.circular(10),
           ),
-          margin: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
-          padding: EdgeInsets.all(40),
-          child: Text(
-            data[index],
-            style: TextStyle(
-              fontSize: 24,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+          margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 5),
+          padding: const EdgeInsets.all(20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    personList[index].name,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+Text(
+                    personList[index].name,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "Job:${personList[index].job.title}",
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  Text(
+                    personList[index].age.toString(),
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  Image.asset(
+                    personList[index].job.image,
+                    width: 50,
+                    height: 50,
+                  ),
+                ],
+              ),
+            ],
           ),
         );
-
-    }, 
-    itemCount: data.length
+      },
     );
   }
 }
