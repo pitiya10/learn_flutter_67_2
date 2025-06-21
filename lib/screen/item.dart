@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter_67_2/models/person.dart';
+// Step 12 : Use google fonts
+import 'package:google_fonts/google_fonts.dart';
 
 class Item extends StatefulWidget {
   const Item({super.key});
@@ -7,9 +9,6 @@ class Item extends StatefulWidget {
   @override
   State<Item> createState() => _ItemState();
 }
-
-//step 12 : use google font
-import 'package:google_fonts/google_fonts.dart'; 
 
 class _ItemState extends State<Item> {
   @override
@@ -19,7 +18,7 @@ class _ItemState extends State<Item> {
       itemBuilder: (context, index) {
         return Container(
           decoration: BoxDecoration(
-            color: Colors.blue,
+            color: const Color.fromARGB(255, 250, 157, 236),
             borderRadius: BorderRadius.circular(10),
           ),
           margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 5),
@@ -32,34 +31,30 @@ class _ItemState extends State<Item> {
                 children: [
                   Text(
                     personList[index].name,
-                    style: const TextStyle(
+                    // style: const TextStyle(
+                    //   fontSize: 24,
+                    //   color: Colors.white,
+                    //   fontWeight: FontWeight.bold,
+                    // ),
+
+                    // Step 12: Use google fonts
+style: GoogleFonts.kanit(
                       fontSize: 24,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-Text(
-                    personList[index].name,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFFFFFFF),
                     ),
                   ),
                   Text(
-                    "Job:${personList[index].job.title}",
-                    style: const TextStyle(
+                    "job:${personList[index].job.title}",
+                    style: GoogleFonts.kanit(
                       fontSize: 18,
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal,
+                      color: Color.fromARGB(255, 13, 13, 13),
                     ),
                   ),
                   Text(
                     personList[index].age.toString(),
-                    style: const TextStyle(
+                    style: GoogleFonts.kanit(
                       fontSize: 18,
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal,
+                      color:  Color.fromARGB(255, 249, 249, 249),
                     ),
                   ),
                   Image.asset(
@@ -76,3 +71,5 @@ Text(
     );
   }
 }
+
+ 
