@@ -1,4 +1,4 @@
-//Step 8 : stateful widget
+// step8: stateful widget
 import 'package:flutter/material.dart';
 
 class Item extends StatefulWidget {
@@ -11,46 +11,72 @@ class Item extends StatefulWidget {
 class _ItemState extends State<Item> {
   int quantity = 10;
 
-  void addQuantity() {
-    setState(() {
-      quantity++;
-    });
-  }
+// void addQuantity() {
+//     setState(() {
+//       quantity++;
+//     });
+//   }
 
-  void subtractQuantity() {
-    setState(() {
-     quantity = (quantity > 0) ? quantity - 1 : 0;
-    });
-  }
-   
+// void subtractQuantity() {
+//     setState(() {
+//       if (quantity > 0) {
+//         quantity--;
+//       }
+//     });
+//   }
+
+// step 9: Listview widget
+List data = ["สมชาย", "สมหญิง", "สมศรี", "สมปอง", "สมจิตร", "สมบัติ", "สมคิด", "สมหวัง"];
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            "Quantity: $quantity",
-            style: const TextStyle(fontSize: 24),
+    // return Center(
+    //   child: Column(
+    //     mainAxisAlignment: MainAxisAlignment.center,
+    //      children: [
+    //       Text(
+    //         "Quantity: $quantity",
+    //         style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+    //       ),
+    //       const SizedBox(height: 20),
+    //       Row(
+    //         mainAxisAlignment: MainAxisAlignment.center,
+    //         children: [
+    //           ElevatedButton(
+    //             onPressed: addQuantity,
+    //             child: const Text("Add"),
+    //           ),
+    //           const SizedBox(width: 20),
+    //           ElevatedButton(
+    //             onPressed: subtractQuantity,
+    //             child: const Text("Subtract"),
+    //           ),
+    //         ],
+    //       ),
+    //      ],
+    //   ),
+    // );
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return Container(
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(10),
           ),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: addQuantity,
-                child: const Text("Add"),
-              ),
-              const SizedBox(width: 20),
-              ElevatedButton(
-                onPressed: subtractQuantity,
-                child: const Text("Subtract"),
-              ),
-            ],
+          margin: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
+          padding: EdgeInsets.all(40),
+          child: Text(
+            data[index],
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ],
-      ),
-    );
+        );
 
+    }, 
+    itemCount: data.length
+    );
   }
 }
