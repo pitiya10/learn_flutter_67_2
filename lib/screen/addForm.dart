@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter_67_2/models/person.dart';
 //Step 15 : from state management
+ //Step 17 : Routing
+import 'package:learn_flutter_67_2/main.dart';
 //Step 16 : submit button
 class AddForm extends StatefulWidget {
   const AddForm({super.key});
@@ -85,16 +87,22 @@ Widget build(BuildContext context) {
                   onPressed:() {
                 //Step 15 : from state management
                 //Step 16 : submit button
+
                 _formKey.currentState!.validate();
                 _formKey.currentState!.save();
                 personList.add(Person(name: _name, age: _age, job: _job));
                print(personList.length);
-                  _formKey.currentState!.reset();
+                  _formKey.currentState!
+                  .reset();
 
+                  //Step 17 : Routing
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder:(ctx)=> MyApp()),
+                  );
                   },
                   style: FilledButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 243, 33, 33),
-                  ),
+                    backgroundColor:Colors.green),
                   child:Text(
                     "Submit", style: TextStyle(color: Colors.white,fontSize: 20) 
                   ),
